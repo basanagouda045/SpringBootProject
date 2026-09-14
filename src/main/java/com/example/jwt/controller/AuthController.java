@@ -1,5 +1,6 @@
 package com.example.jwt.controller;
 
+import ch.qos.logback.core.CoreConstants;
 import com.example.jwt.entity.User;
 import com.example.jwt.service.JwtService;
 import com.example.jwt.service.ProductService;
@@ -38,6 +39,7 @@ public class AuthController {
 
     @PostMapping("/login")
      public ResponseEntity<String> login(@RequestParam String email, @RequestParam String password){
+
         User user = userService.loginUser(email, password);
 
         if(user != null){

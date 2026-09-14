@@ -34,7 +34,8 @@ public class UserService {
     public User loginUser(String email , String password){
 
         Optional<User> user = userRepository.findByEmail(email);
-
+        System.out.println("LOGIN EMAIL = " + email);
+        System.out.println("USER FOUND = " + user.isPresent());
         if(user.isEmpty()){
             return null;
         }
